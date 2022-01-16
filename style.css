@@ -91,7 +91,9 @@ body{
     .socialIcon i{
         font-size: 18px;
     }
+    
 }
+
 
 .container{
 /* height: 500px; */
@@ -139,6 +141,9 @@ h1,h2,h3,h4,h5{
     }
     .skillnext{
         width: 80% !important;
+    }
+    #aboutMyself h1{
+        font-size:20px !important;
     }
 }
 .skillsimg .text-center i{
