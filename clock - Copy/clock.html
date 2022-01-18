@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+        body {
+            background-color: lightslategray;
+        }
+
+        .container {
+
+            transform: translateY(-50%);
+            position: relative;
+            top: 50vh;
+            margin: auto;
+            border: 0.5vw solid rgb(0, 0, 0);
+            border-radius: 5%;
+            height: 45vw;
+            width: 45vw;
+            overflow: hidden;
+            align-content: center;
+            justify-content: center;
+            background-image: url(clock.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+
+        .divbox {
+            margin-top: 7.5vw;
+            margin-left: 7.5vw;
+
+        }
+
+        #hour {
+            height: 15vw;
+            width: 6vw;
+            position: relative;
+            top: 2vw;
+            left: 11.7vw;
+            transform-origin: 3vw 13vw;
+            background-image: url(hour.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+           
+        }
+
+
+        #minute {
+            z-index: 18;
+            height: 18vw;
+            width: 7vw;
+            background-image: url(minutehands.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            /* border: 2px solid green; */
+            position: relative;
+            top: -13.75vw;
+            left: 11.51vw;
+            transform-origin: 3.5vw 15.9vw;
+            z-index: 19;
+        }
+
+        #second {
+            height: 21vw;
+            width: 5vw;
+            position: relative;
+            top: -35vw;
+            left: 13.56vw;
+            transform-origin: 1.57vw 19.11vw;
+            background-image: url(second.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 20;
+
+        }
+
+        .centre {
+            position: relative;
+            top: -29.71vw;
+            left: 8.4vw;
+            color: #ffbc00;
+            font-size: 2vw;
+            font-family: 'Dancing Script', cursive;
+
+
+        }
+        .centre1{
+            height: 1vw;
+            width: 1vw;
+            position: relative;
+            top: -42.3vw;
+            left: 14.1vw;
+            background-color: #f4ff00;
+            z-index: 100;
+            border-radius: 50%;
+        }
+
+        .minsec {
+            position: relative;
+            left: -0.44vw;
+            top: -2.14vw;
+        }
+        
+        @media screen and (max-width:820px) {
+            .container{
+                width: 75vw;
+                height: 75vw;
+            }
+        }
+    </style>
+    <script>
+        setInterval(() => {
+            d = new Date();
+            htime = d.getHours();
+            mtime = d.getMinutes();
+            stime = d.getSeconds();
+
+            hrotation = 30 * htime + mtime / 2 + (0.5 / 60) * stime;
+            mrotation = 6 * mtime + 0.1 * stime;
+            // mrotation = 6 * stime;
+            srotation = 6 * stime;
+
+            hour.style.transform = `rotate(${hrotation}deg)`;
+            minute.style.transform = `rotate(${mrotation}deg)`;
+            second.style.transform = `rotate(${srotation}deg)`;
+        }, 1000);
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="clockcontainer">
+            <div class="divbox">
+                <div id="hour"> </div>
+
+                <div class="minsec">
+                    <div id="minute"></div>
+                    <div id="second"> </div>
+                </div>
+
+                <div class="centre">
+                    Gaurav Sharma
+                </div>
+                <div class="centre1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
