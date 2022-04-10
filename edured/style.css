@@ -67,7 +67,7 @@
 .cover{
     display: flex;
     /* background-color: black; */
-    height: 80vh;
+    /* height: 80vh; */
     
     
 }
@@ -102,6 +102,9 @@
     }
     .cover_photo{
         width: 100%;
+    }
+    .content{
+        height: fit-content;
     }
 }
 
