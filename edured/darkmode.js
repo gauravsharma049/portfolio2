@@ -5,8 +5,6 @@ let navimg = document.getElementById('navlogo');
 let darMod = document.getElementById("darkmode");
 let body = document.getElementsByTagName('body')[0];
 
-let darkmodhint = document.getElementsByClassName('darkModeHint')[0];
-
 
 
 for(let i=0; i<navlink.length; i++){
@@ -55,16 +53,4 @@ function setcolor(){
         body.style.backgroundColor = 'white';
         body.style.color = 'black';
     }
-}
-
-
-
-function showHint(){
-    darkmodhint.style.visibility = 'visible';
-}
-
-
-
-function hideHint(){
-    darkmodhint.style.visibility = 'hidden';
 }

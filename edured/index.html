@@ -34,6 +34,8 @@
             width: 100%;
             z-index: 11;
             user-select: none;
+            
+            
         }
 
 
@@ -51,6 +53,14 @@
             .navbar-nav {
                 align-items: unset !important;
             }
+            
+        }
+        @media screen and (max-width: 1170px) {
+            .navbar-container {
+                padding-right: var(--bs-gutter-x, .75rem);
+                padding-left: var(--bs-gutter-x, .75rem);
+            }
+
             
         }
 
@@ -86,8 +96,9 @@
                         style="color: red;">red</span></div>
             </a>
             <form class="d-flex" method="get" action="">
-                <input style="margin-right: 10px;" class="form-control" type="text" name="search" id="" placeholder="Search tutorials or courses ...">
-                <input class="btn btn-primary" type="submit" value="Search">
+                <button style="position: absolute; background-color: transparent;height: 40px; border: none; color: #a8b0bf; cursor: context-menu;" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input style="margin-right: 10px; padding-left: 30px;" class="form-control" type="text" name="search" id="" placeholder="Search tutorials or courses ...">
+                
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -126,17 +137,36 @@
                     <li class="nav-item">
                         <a class="nav-link" href=""><span class="my-btn">Sign&nbspin</span></a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <div class="darkmode" id="darkmode" onclick="darkmode()">
                             <div class="darkmodeinside"></div>
                         </div>
-
-                    </li> -->
+                    </li>
                 </ul>
 
             </div>
         </div>
     </nav>
+
+    <div class="content">
+        <br>
+        <div class="cover container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 w-100">
+                <div class="cover_details col mb-4 rounded-3 ">
+                    <h1>Learn to Code 
+                        <br>
+                        for Free
+                    </h1>
+                    <p>
+                        Learn to code with our beginner-friendly tutorials  and examples. Read tutorials, try examples, write  programs, and learn to code.
+                    </p>
+                </div>
+                <div class="cover_photo col mb-4 rounded-3">this is for content photo</div>
+                
+                
+            </div>
+        </div>
+    </div>
 
     <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quae quo accusantium doloribus via velit incidunt,
@@ -407,12 +437,6 @@
         voluptas necessitatibus velit beatae quis molestiae praesentium? Ab qui nulla quas possimus eligendi.
     </div>
 
-    <div class="darkmode" onmouseover="showHint()" id="darkmode" onmouseleave="hideHint()" onclick="darkmode()">
-        <div class="darkmodeinside"></div>
-    </div>
-    <div class="darkModeHint">Switch to Dark Mode</div>
-
-    
 
 
 
