@@ -61,6 +61,7 @@
 .content{
     background-color: #b8dde3;
     height: 100vh;
+    max-height: fit-content;
     padding-top: 50px;
 }
 .cover{
@@ -120,4 +121,7 @@
     margin: 5px;
     border-radius: 5px;
     
+}
+.img-fluid{
+    max-width: 80%;
 }
