@@ -20,3 +20,40 @@
     background: rgb(151, 142, 142);
     cursor: pointer;
 }
+.darkmode{
+    height: 40px;
+    background-color: white;
+    border: 2px solid black;
+    width: 50px;
+    border-top-right-radius: 43%;
+    border-bottom-right-radius: 43%;
+    padding: 3.5px 1px;
+    position: sticky;
+    bottom: 50px;
+    box-sizing: border-box;
+    box-shadow: 1px 0px 5px black;
+    
+}
+
+.darkmodeinside{
+    display: inline-block;
+    height: 29px;
+    background-color: black;
+    width: 29px;
+    border-radius: 50%;
+
+}
+.darkModeHint{
+    display: inline-block;
+    position: sticky;
+    bottom: 55px;
+    left: 45px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 400;
+    visibility: hidden;
+    color: black;
+    
+}
