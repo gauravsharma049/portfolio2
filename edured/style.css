@@ -55,6 +55,9 @@
     color: black;
     
 }
+.navbutton{
+    color: black;
+}
 .content{
     background-color: #b8dde3;
     height: 100vh;
@@ -103,4 +106,18 @@
 
 .cover_details h1{
     font-weight: 700;
+}
+
+.burgerbtn{
+    border: 1px solid black;
+    width: fit-content;
+    border-radius: 5px;
+}
+.burgerbtn-in{
+    background-color: black;
+    width: 20px;
+    height: 2px;
+    margin: 5px;
+    border-radius: 5px;
+    
 }

@@ -6,7 +6,6 @@ let darMod = document.getElementById("darkmode");
 let body = document.getElementsByTagName('body')[0];
 
 
-
 for(let i=0; i<navlink.length; i++){
             
     navlink[i].style.color = '#0e1133'
@@ -33,6 +32,8 @@ function setcolor(){
         darMod.style.boxShadow = '1px 0px 5px white';
         body.style.backgroundColor = '#1e1c1c';
         body.style.color = 'white';
+
+        burgerbtnDark();
     }
     else{
 
@@ -52,5 +53,25 @@ function setcolor(){
         darMod.style.boxShadow = '1px 0px 5px black';
         body.style.backgroundColor = 'white';
         body.style.color = 'black';
+
+        burgerbtnLight();
+    }
+}
+
+function burgerbtnDark(){
+    let burgerbtn = document.getElementsByClassName('burgerbtn')[0];
+    let burgerbtn_in = document.getElementsByClassName('burgerbtn-in');
+    burgerbtn.style.borderColor = 'white';
+    for(let i=0; i<burgerbtn_in.length; i++){
+        burgerbtn_in[i].style.backgroundColor ='white';
+    }
+
+}
+function burgerbtnLight(){
+    let burgerbtn = document.getElementsByClassName('burgerbtn')[0];
+    let burgerbtn_in = document.getElementsByClassName('burgerbtn-in');
+    burgerbtn.style.borderColor = 'black';
+    for(let i=0; i<burgerbtn_in.length; i++){
+        burgerbtn_in[i].style.backgroundColor ='black';
     }
 }
