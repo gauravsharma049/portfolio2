@@ -37,9 +37,10 @@
             let message = document.getElementById("describe");
             let invalidData = document.getElementById("invalidData");
             let formsuccess = document.getElementById("formsuccess");
+	    let mob = document.getElementById("inputMobNum");
             if (fname.value != "" && lname.value != "" && email.value != "" && message.value != "") {
                 SubForm();
-                fname.value = lname.value = email.value = message.value = "";
+                fname.value = lname.value = email.value = message.value = mob.value = "";
                 invalidData.style.visibility = "hidden";
                 formsuccess.style.visibility = "visible";
                 formsuccess.style.backgroundColor = "#343836";
