@@ -18,17 +18,23 @@
 
     <script>
         function SubForm() {
+            let formsubmitted = true;
+            
             $.ajax({
                 url: "https://api.apispreadsheets.com/data/WHHMuqAPPeuwmnLb/",
                 type: "post",
                 data: $("#myForm").serializeArray(),
                 success: function () {
+                    
+                    formsubmitted = true;
                     alert("Form Data Submitted :)")
                 },
                 error: function () {
+                    formsubmitted = false;
                     alert("There was an error :(")
                 }
             });
+            return formsubmitted;
         }
         function validsubform() {
             let fname = document.getElementById("inputfName");
@@ -37,16 +43,17 @@
             let message = document.getElementById("describe");
             let invalidData = document.getElementById("invalidData");
             let formsuccess = document.getElementById("formsuccess");
-	    let mob = document.getElementById("inputMobNum");
+            let mob = document.getElementById("inputMobNum");
             if (fname.value != "" && lname.value != "" && email.value != "" && message.value != "") {
-                SubForm();
-                fname.value = lname.value = email.value = message.value = mob.value = "";
-                invalidData.style.visibility = "hidden";
-                formsuccess.style.visibility = "visible";
-                formsuccess.style.backgroundColor = "#343836";
-                formsuccess.style.color = "#00ff8f";
-                formsuccess.innerHTML = "Thanks for contacting us !! we will reach you soon";
-                
+                if (SubForm()) {
+                    fname.value = lname.value = email.value = message.value = mob.value = "";
+                    invalidData.style.visibility = "hidden";
+                    formsuccess.style.visibility = "visible";
+                    formsuccess.style.backgroundColor = "#343836";
+                    formsuccess.style.color = "#00ff8f";
+                    formsuccess.innerHTML = "Thanks for contacting us !! we will reach you soon";
+                    console.log('ok');
+                }
             }
             else {
                 //    invalidData.style.backgroundColor = 'white';
@@ -55,9 +62,10 @@
                 invalidData.style.color = "red";
                 invalidData.style.paddingLeft = '0px';
                 formsuccess.style.visibility = "hidden";
-                
+                console.log("not ok");
             }
         }
+
     </script>
 </head>
 
