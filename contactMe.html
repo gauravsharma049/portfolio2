@@ -16,28 +16,54 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		crossorigin="anonymous"></script>
 	<script>
-		function SubForm (){
-			$.ajax({
-				url:"https://api.apispreadsheets.com/data/uCbZLadWgqwuD9HU/",
-				type:"post",
-				data:$("#myForm").serializeArray(),
-				success: function(){
-					alert("Form Data Submitted :)")
-				},
-				error: function(){
-					alert("There was an error :(")
-				}
-			});
-		}
-	</script>
-    
+        function SubForm() {
+            $.ajax({
+                url: "https://api.apispreadsheets.com/data/uCbZLadWgqwuD9HU/",
+                type: "post",
+                data: $("#myForm").serializeArray(),
+                success: function () {
+                    alert("Form Data Submitted :)")
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+        function validsubform() {
+            let fname = document.getElementById("inputfName");
+            let lname = document.getElementById("inputLName");
+            let email = document.getElementById("inputEmail");
+            let message = document.getElementById("describe");
+            let invalidData = document.getElementById("invalidData");
+            let formsuccess = document.getElementById("formsuccess");
+            if (fname.value != "" && lname.value != "" && email.value != "" && message.value != "") {
+                fname.value = lname.value = email.value = message.value = "";
+                invalidData.style.visibility = "hidden";
+                formsuccess.style.visibility = "visible";
+                formsuccess.style.backgroundColor = "#343836";
+                formsuccess.style.color = "#00ff8f";
+                formsuccess.innerHTML = "Thanks for contacting us !! we will reach you soon";
+                
+                SubForm();
+            }
+            else {
+                //    invalidData.style.backgroundColor = 'white';
+                invalidData.style.visibility = "visible";
+                invalidData.innerHTML = "please fill all the required field marked with *";
+                invalidData.style.color = "red";
+                invalidData.style.paddingLeft = '0px';
+                formsuccess.style.visibility = "hidden";
+                
+            }
+        }
+    </script>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c0c0cca;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/portfolio/index.html#"><img height="80px" src="logo2.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img height="80px" src="logo2.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -46,19 +72,19 @@
             <div class="collapse navbar-collapse me-lg-5" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-white">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/portfolio/index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/portfolio/index.html#aboutMyself">About</a>
+                        <a class="nav-link" href="/index.html#aboutMyself">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/portfolio/index.html#skills">Skills</a>
+                        <a class="nav-link" href="/index.html#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/portfolio/portfolio.html">Portfolio</a>
+                        <a class="nav-link " href="/portfolio.html">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link contact-form" href="#">CONTACT ME</a>
+                        <a class="nav-link contact-form" href="/contactMe.html">CONTACT ME</a>
                     </li>
 
                 </ul>
@@ -66,33 +92,38 @@
             </div>
         </div>
     </nav>
-
     <div class="container w-75 my-4">
+        <div id="invalidData" class="form-control border-0" style="background-color: transparent ;"></div><br>
         <form class="row g-3" id="myForm">
             <div class="col-md-6">
-              <label for="First_Name" class="form-label">First&nbspName&nbsp<span class="text-danger">*</span></label>
-              <input type="text" name="First_Name" class="form-control" id="inputfName" placeholder="first name" required>
+                <label for="First_Name" class="form-label">First&nbspName&nbsp<span class="text-danger">*</span></label>
+                <input type="text" name="First_Name" class="form-control" id="inputfName" placeholder="first name"
+                    required>
             </div>
             <div class="col-md-6">
-              <label for="Last_Name" class="form-label">Last&nbspName&nbsp<span class="text-danger">*</span></label>
-              <input type="text" name="Last_Name" class="form-control" placeholder="last name" id="inputLName">
+                <label for="Last_Name" class="form-label">Last&nbspName&nbsp<span class="text-danger">*</span></label>
+                <input type="text" name="Last_Name" class="form-control" placeholder="last name" id="inputLName">
             </div>
             <div class="col-md-6">
-              <label for="Email_Address" class="form-label">Email&nbsp<span class="text-danger">*</span></label>
-              <input type="email" name="Email_Address" class="form-control" placeholder="email address" id="inputEmail" >
+                <label for="Email_Address" class="form-label">Email&nbsp<span class="text-danger">*</span></label>
+                <input type="email" name="Email_Address" class="form-control" placeholder="email address"
+                    id="inputEmail">
             </div>
             <div class="col-md-6">
-              <label for="Mobile_Number" class="form-label">Mobile&nbspNumber&nbsp</label>
-              <input type="number" name="Mobile_Number" class="form-control" placeholder="Mobile number" id="inputMobNum">
+                <label for="Mobile_Number" class="form-label">Mobile&nbspNumber&nbsp</label>
+                <input type="number" name="Mobile_Number" class="form-control" placeholder="Mobile number"
+                    id="inputMobNum">
             </div>
             <div class="col-md-12">
-              <label for="Description" class="form-label">Your&nbspmessage&nbsp<span class="text-danger">*</span></label>
-              <br>
-              <textarea class="form-control" name="Description" id="describe" rows="10" placeholder="enter Your message"></textarea>
+                <label for="Description" class="form-label">Your&nbspmessage&nbsp<span
+                        class="text-danger">*</span></label>
+                <br>
+                <textarea class="form-control" name="Description" id="describe" rows="10"
+                    placeholder="enter Your message"></textarea>
             </div>
         </form>
         <div class="col-12 my-4">
-          <button type="submit" onclick='SubForm()' name="submitbtn" class="btn btn-primary">Submit</button>
+            <button type="submit" onclick='validsubform()' name="submitbtn" class="btn btn-primary">Submit</button>
         </div>
         <div id="formsuccess" class="form-control border-0" style="background-color: transparent ;"></div>
     </div>
