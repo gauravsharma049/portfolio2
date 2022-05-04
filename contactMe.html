@@ -15,10 +15,11 @@
 		src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		crossorigin="anonymous"></script>
-	<script>
+
+    <script>
         function SubForm() {
             $.ajax({
-                url: "https://api.apispreadsheets.com/data/uCbZLadWgqwuD9HU/",
+                url: "https://api.apispreadsheets.com/data/WHHMuqAPPeuwmnLb/",
                 type: "post",
                 data: $("#myForm").serializeArray(),
                 success: function () {
@@ -37,6 +38,7 @@
             let invalidData = document.getElementById("invalidData");
             let formsuccess = document.getElementById("formsuccess");
             if (fname.value != "" && lname.value != "" && email.value != "" && message.value != "") {
+                SubForm();
                 fname.value = lname.value = email.value = message.value = "";
                 invalidData.style.visibility = "hidden";
                 formsuccess.style.visibility = "visible";
@@ -44,7 +46,6 @@
                 formsuccess.style.color = "#00ff8f";
                 formsuccess.innerHTML = "Thanks for contacting us !! we will reach you soon";
                 
-                SubForm();
             }
             else {
                 //    invalidData.style.backgroundColor = 'white';
